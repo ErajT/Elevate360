@@ -16,7 +16,7 @@ const App = () => {
     <Router>
       <AppContainer>
         <Routes>
-          <Route path="/header" element={<Header />} />
+          <Route path="/" element={<Header />} />
           {/* Add more routes here */}
         </Routes>
       </AppContainer>
