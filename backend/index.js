@@ -3,10 +3,8 @@ const cors = require('cors');
 const bodyParser = require('body-parser');
 // const { checkToken } = require("./auth/token_validation")
 
-// const userRouter = require('./api/users/user.router');
-// const LeaderboardRouter = require('./Routes/LeaderboardRoutes');
-// const AdminRouter = require('./Routes/AdminRoutes');
-// const ScheduleRouter = require('./Routes/ScheduledRoutes');
+
+const EmployeeRouter = require('./Routers/EmployeeRoutes');
 
 let app = express();
 app.options('*', cors()); // Allow preflight requests
@@ -38,18 +36,17 @@ const corsOptions = {
   credentials: true // Allow credentials
 };
 
-// Global CORS middleware
-// app.use(cors(corsOptions));
-
-// // Handle preflight requests explicitly for critical routes
-// app.options('/users', cors(corsOptions));
-// app.options('/leaderboard', cors(corsOptions));
-// app.options('/admin', cors(corsOptions));
-// app.options('/schedule', cors(corsOptions));
-
 //middleware for request body
 app.use(express.json());
+app.use('/employee', EmployeeRouter);
 // app.use('/users', userRouter);
 // app.use('/leaderboard', checkToken , LeaderboardRouter);
 // app.use('/admin',checkToken, AdminRouter);
 // app.use('/schedule', ScheduleRouter);
+
+app.listen(2000,()=>{
+  console.log("Server has started");
+})
+
+
+module.exports = app;
