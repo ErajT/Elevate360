@@ -4,7 +4,7 @@ const express= require('express')
 const router = express.Router();
 
 router.route('/generate')
-    .post(EmployeeHandler.generateLeaderboard)
+    .get(EmployeeHandler.generateLeaderboard)
 
     
 module.exports = router
