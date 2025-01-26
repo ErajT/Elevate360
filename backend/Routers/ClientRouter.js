@@ -3,8 +3,7 @@ const express= require('express')
 
 const router = express.Router();
 
-router.route('/generate')
-    .get(ClientHandler.generateLeaderboard)
-
-    
+router.route('/getProjectsByClient/:clientID')
+    .get(ClientHandler.getProjectsByClientID);
+ 
 module.exports = router
