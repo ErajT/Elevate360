@@ -28,7 +28,7 @@ const App = () => {
       <AppContainer>
         <Routes>
           <Route path="/header" element={<Header />} />
-          <Route path="/clienthome" element={<ClientHome />} />
+          <Route path="/" element={<ClientHome />} />
           <Route path="/clientmanage" element={<Clientmanage />} />
           <Route path="/clientProp" element={<ClientProp />} />
           <Route path="/clientReq" element={<ClientReq />} />
