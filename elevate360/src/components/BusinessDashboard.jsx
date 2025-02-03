@@ -96,7 +96,6 @@ const theme = createTheme({
     },
   },
 })
-
 const ProjectCard = ({ title, description, status }) => {
   const getStatusColor = () => {
     switch (status) {

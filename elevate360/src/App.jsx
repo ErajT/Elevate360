@@ -10,6 +10,8 @@ import ClientReq from "./components/ClientReq";
 import BusinessDashboard from "./components/BusinessDashboard";
 import BusinessReq from "./components/BusinessReq";
 import Navbar from "./components/Navbar";
+import Landing from "./components/Landing";
+import Logins from "./components/Logins";
 
 
 const AppContainer = styled.div`
@@ -27,7 +29,7 @@ const App = () => {
     <Router>
       <AppContainer>
         <Routes>
-          <Route path="/header" element={<Header />} />
+          <Route path="/" element={<Landing />} />
           <Route path="/clienthome" element={<ClientHome />} />
           <Route path="/clientmanage" element={<Clientmanage />} />
           <Route path="/clientProp" element={<ClientProp />} />
@@ -35,7 +37,9 @@ const App = () => {
           <Route path="/businessdashboard" element={<BusinessDashboard />} />
           <Route path="/businessreq" element={<BusinessReq />} />
           <Route path="/clientsprint" element={<ClientSprint />} />
+          {/* <Route path="/clientsprint" element={<ClientSprint />} /> */}
           <Route path="/navbar" element={<Navbar />} />
+          <Route path="/logins" element={<Logins />} />
           {/* Add more routes here */}
         </Routes>
       </AppContainer>
