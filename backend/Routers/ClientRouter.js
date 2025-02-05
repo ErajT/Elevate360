@@ -15,9 +15,9 @@ router.route('/getSprintsByProject/:projectID')
 router.route('/getScopeFile/:sprintID')
     .get(ClientHandler.getScopeFileBySprintID);
 
-// Update scope file for a specific sprint
-router.route('/addScopeFile')
-    .put(ClientHandler.insertScopeFile);
+// // Update scope file for a specific sprint
+// router.route('/addScopeFile')
+//     .put(ClientHandler.insertScopeFile);
 
 // Create new project with initial sprint
 router.route('/createProject')

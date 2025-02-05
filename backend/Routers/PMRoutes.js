@@ -3,8 +3,9 @@ const express= require('express')
 
 const router = express.Router();
 
-router.route('/generate')
-    .get(PMHandler.generateLeaderboard)
+// Get all projects associated with a specific PM
+router.route('/getProjectsByPm/:pmID')
+    .get(PMHandler.getProjectsByPmID);
 
-    
+   
 module.exports = router

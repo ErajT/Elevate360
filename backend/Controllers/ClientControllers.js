@@ -34,9 +34,18 @@ exports.getProjectsByClientID = async (req, res) => {
             status: "success",
             message: "Projects fetched successfully",
             data: {
-                new: newProjects,
-                inProcess: inProcessProjects,
-                completed: completedProjects
+                new: {
+                    projects: newProjects,
+                    total_count: newProjects.length
+                },
+                inProcess: {
+                    projects: inProcessProjects,
+                    total_count: inProcessProjects.length
+                },
+                completed: {
+                    projects: completedProjects,
+                    total_count: completedProjects.length
+                }
             }
         });
     } catch (err) {
@@ -165,7 +174,7 @@ exports.createProjectWithSprint = async (req, res) => {
         if (scopeFile) {
             // Convert base64 to Buffer
             const fileBuffer = Buffer.from(scopeFile, 'base64');
-            
+
             // Here you might want to add compression
             // This is a simple example using zlib
             const zlib = require('zlib');
@@ -188,7 +197,7 @@ exports.createProjectWithSprint = async (req, res) => {
         if (!projectID) {
             throw new Error('Failed to get projectID after insertion');
         }
-        
+
         // Then, insert the sprint with the new project ID
         await Qexecution.queryExecute(sprintSQL, [
             projectID,
